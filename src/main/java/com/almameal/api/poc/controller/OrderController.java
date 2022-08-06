@@ -32,7 +32,12 @@ public class OrderController {
     }
 
     @PostMapping
-    public OrderDetails createOrder(@RequestBody OrderDetails newOrder) {
-        return orderService.createNewOrder(newOrder);
+    public OrderDetails saveOrder(@RequestBody OrderDetails order) {
+        return orderService.saveOrder(order);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteOrder(@PathVariable Long id) {
+        return orderService.deleteOrder(id);
     }
 }

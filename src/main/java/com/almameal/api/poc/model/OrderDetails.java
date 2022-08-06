@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,4 +19,13 @@ public class OrderDetails {
     private Long orderId;
 
     private String totalPrice;
+
+    @OneToOne
+    private User user;
+
+    @OneToMany
+    private List<Product> productList;
+
+    private Date createdDate;
+    private Date updatedDate;
 }
