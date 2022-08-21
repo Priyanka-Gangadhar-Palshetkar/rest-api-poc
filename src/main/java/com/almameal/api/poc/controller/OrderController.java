@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 @RestController
-@RequestMapping("/orders")
+@RequestMapping("/orderss")
 public class OrderController {
 
     private OrderService orderService;
